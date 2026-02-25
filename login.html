@@ -1,13 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Nova Fisio</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
+
+
 
 <body class="d-flex flex-column min-vh-100">
 
@@ -65,23 +67,41 @@
 
     </div>
   </nav>
-  <!--final de barra de menu-->
 
+   
 
+  <div class="container-fluid p-0 d-flex justify-content-center align-items-center"
+     style="
+     background-image: url('imagens/estrutura do site (1).png');
+     background-size: cover;
+     background-position: center;
+     height: calc(100vh - 120px);
+     ">
 
-  <!-- conteúdo da página (pode colocar suas coisas aqui) -->
-  <div class="container-fluid p-0">
-  <img src="imagens/estrutura do site.png" 
-       alt="plano de fundo" 
-       class="img-fluid w-100">
+  <div class="bg-white p-4 rounded shadow text-center" style="width: 320px;">
+  
+  <h3 class="mb-4 fw-bold text-success">LOGIN</h3>
+
+  <form>  
+    <form>
+      <div class="mb-3">
+        <label for="CPF" class="form-label">CPF</label>
+        <input type="text" class="form-control" id="CPF" placeholder="Digite seu CPF">
+      </div>
+
+      <div class="mb-3">
+        <label for="Senha" class="form-label">SENHA</label>
+        <input type="password" class="form-control" id="Senha" placeholder="Digite sua senha">
+      </div>
+
+      <button type="submit" class="btn btn-success w-100">ENVIAR</button>
+    </form>
+  </div>
+
 </div>
-      
+       
 
- 
-
-
-
-  <!--início do rodapé-->
+ <!--início do rodapé-->
   <footer class="mt-auto text-center py-3 border-top" style="background-color: #1fae4b">
     <span class="text-white">
        © 2026 Desenvolvido por NOVAstartup
@@ -89,6 +109,10 @@
   </footer>
   <!--final do rodapé-->
 
+
+  
+</div>
+  
 </body>
 
 </html>
