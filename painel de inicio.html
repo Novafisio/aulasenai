@@ -11,21 +11,26 @@
 
 <body class="d-flex flex-column min-vh-100">
 
-  <!--inicio de barra de menu-->
-  <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #1fae4b">
-    <div class="container-fluid">
+ <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1fae4b">
+  <div class="container-fluid">
 
-      <a class="navbar-brand" href="#">
-        <img src="imagens/logo.jpeg" alt="Logo" style="width: 30px" />
-      </a>
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="imagens/logo.jpeg" alt="Logo" width="30">
+    </a>
 
-      <ul class="navbar-nav me-auto " >
+    <!-- Botão hamburguer -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Itens do menu -->
+    <div class="collapse navbar-collapse" id="menuNavbar">
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         <li class="nav-item">
           <a class="nav-link text-white" href="painel de inicio.html">Início</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">|</a>
         </li>
 
         <li class="nav-item">
@@ -33,15 +38,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">|</a>
-        </li>
-
-        <li class="nav-item">
           <a class="nav-link text-white" href="login.html">Login</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">|</a>
         </li>
 
         <li class="nav-item">
@@ -49,25 +46,21 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">|</a>
-        </li>
-
-        <li class="nav-item">
           <a class="nav-link text-white" href="#">Contato</a>
         </li>
-      
+
       </ul>
 
+      <!-- Campo de pesquisa -->
       <form class="d-flex">
         <input class="form-control me-2" type="text" placeholder="Digite">
         <button class="btn btn-primary" type="submit">Pesquisar</button>
       </form>
 
     </div>
-  </nav>
-  <!--final de barra de menu-->
 
-
+  </div>
+</nav>
 
   <!-- conteúdo da página (pode colocar suas coisas aqui) -->
   <div class="container-fluid p-0">
