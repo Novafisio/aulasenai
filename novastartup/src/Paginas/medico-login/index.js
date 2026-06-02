@@ -109,37 +109,7 @@ export default function medico() {
                 marginBottom: 24,
               }}
             >
-              <button
-                style={estiloArco("paciente")}
-                onClick={() => setPerfil("paciente")}
-              >
-                <svg
-                  width={40}
-                  height={40}
-                  viewBox="0 0 100 100"
-                  fill="white"
-                >
-                  <circle cx="50" cy="22" r="14" />
-                  <path d="M20 85 Q20 55 50 55 Q80 55 80 85Z" />
-                  <circle cx="62" cy="62" r="13" fill="#0D3B1E" />
-                  <path
-                    d="M56 62 h12 M62 56 v12"
-                    stroke="white"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                </svg>
-
-                <span
-                  style={{
-                    color: "white",
-                    fontSize: 13,
-                    fontWeight: 600,
-                  }}
-                >
-                  paciente
-                </span>
-              </button>
+              
 
               <button
                 style={estiloArco("medico")}

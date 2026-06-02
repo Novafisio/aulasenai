@@ -62,8 +62,7 @@ function Contato() {
         >
           CONTATO
         </h1>
-
-        
+        git pu
         <div
           style={{
             backgroundColor: '#d9d9d9',
@@ -98,7 +97,6 @@ function Contato() {
         </div>
       </div>
 
-      
       <Rodape />
     </div>
   );
