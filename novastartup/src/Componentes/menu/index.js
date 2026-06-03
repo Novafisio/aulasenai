@@ -4,7 +4,7 @@ export default function Menu() {
   return (
     <>
 
-    <nav className="navbar navbar-expand-sm navbar-dark bg-success py-0">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-success py-0 ">
   <div className="container-fluid">
     <a className="navbar-brand" href="javascript:void(0)">
       <img src={logo} height={40}/>
@@ -13,7 +13,7 @@ export default function Menu() {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="mynavbar">
-      <ul className="navbar-nav me-auto">
+      <ul className="navbar-nav" style={{ margin: '0 auto', display: 'flex', justifyContent: 'center', width: '100%' }}>
         <li className="nav-item">
           <Link className="nav-link" to="/"> Inicio</Link>
         </li>
@@ -42,10 +42,6 @@ export default function Menu() {
           <Link className="nav-link" to="/Contato"> Contato </Link>
         </li>
       </ul>
-      <form className="d-flex">
-        <input className="form-control me-2" type="text" placeholder="Pesquise"/>
-        <button className="btn btn-success" type="button">🔍</button>
-      </form>
     </div>
   </div>
 </nav>
