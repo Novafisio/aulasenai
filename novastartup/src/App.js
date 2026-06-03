@@ -9,6 +9,7 @@ import {BrowserRouter,Route,Routes} from "react-router-dom";
 import MedicoLogin from './Paginas/medico-login';
 import PacienteLogin from './Paginas/paciente-login';
 import SolicitacoesAdm from './Paginas/solicitações_adm';
+import PacienteInfo from './Paginas/paciente-info';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path='/ADM' element={<SolicitacoesAdm/>}/>
       <Route path='/medico' element={<MedicoLogin/>}/>
       <Route path='/paciente' element={<PacienteLogin/>}/>
+      <Route path='/teste' element={<PacienteInfo/>}/>
 
     </Routes>
     </BrowserRouter>

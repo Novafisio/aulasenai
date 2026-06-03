@@ -26,6 +26,12 @@ export default function Menu() {
         <li className="nav-item">
           <a className="nav-link"> |</a>
         </li>
+                <li className="nav-item">
+          <Link className="nav-link" to="/teste"> Teste</Link>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link"> |</a>
+        </li>
         <li className="nav-item">
           <Link className="nav-link" to="/Login"> Login</Link>
         </li>

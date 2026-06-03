@@ -49,7 +49,6 @@ function Contato() {
           </h2>
         </div>
 
-        
         <h1
           style={{
             color: 'white',
@@ -62,7 +61,6 @@ function Contato() {
         >
           CONTATO
         </h1>
-        git pu
         <div
           style={{
             backgroundColor: '#d9d9d9',
