@@ -8,7 +8,7 @@ import Paciente from './Paginas/paciente-login';
 import {BrowserRouter,Route,Routes} from "react-router-dom";
 import MedicoLogin from './Paginas/medico-login';
 import PacienteLogin from './Paginas/paciente-login';
-import Pagina2 from './Paginas/solicitações_adm';
+import SolicitacoesAdm from './Paginas/solicitações_adm';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
       <Route path= '/Cadastro' element={<Cadastro/>}/>
       <Route path='/Login' element={<Login/>}/>
       <Route path='/Contato' element={<Contato/>}/>
-      <Route path='/ADM' element={<Pagina2/>}/>
+      <Route path='/ADM' element={<SolicitacoesAdm/>}/>
       <Route path='/medico' element={<MedicoLogin/>}/>
       <Route path='/paciente' element={<PacienteLogin/>}/>
 

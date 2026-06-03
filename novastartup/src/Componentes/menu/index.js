@@ -18,9 +18,6 @@ export default function Menu() {
           <Link className="nav-link" to="/"> Inicio</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/ADM"> Teste</Link>
-        </li>
-        <li className="nav-item">
           <a className="nav-link"> |</a>
         </li>
         <li className="nav-item">
@@ -36,7 +33,7 @@ export default function Menu() {
           <a className="nav-link"> |</a>
         </li>
          <li className="nav-item">
-          <a className="nav-link" href="javascript:void(0)"> Gerenciamento</a>
+          <Link className="nav-link" to="/ADM"> Gerenciamento</Link>
         </li>
         <li className="nav-item">
           <a className="nav-link"> |</a>
