@@ -3,7 +3,7 @@ import Layout from "../../Componentes/layout";
 import fundo from "../../Componentes/imagens/fundo.png";
 import Rodape from "../../Componentes/rodape";
 
-export default function medico() {
+export default function Medico() {
   const [perfil, setPerfil] = useState(null);
   const [cpf, setCpf] = useState("");
   const [mostrarSenha, setMostrarSenha] = useState(false);
