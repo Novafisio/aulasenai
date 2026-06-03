@@ -7,13 +7,14 @@ export default function Paciente() {
   const [perfil, setPerfil] = useState(null);
   const [cpf, setCpf] = useState("");
   const [mostrarSenha, setMostrarSenha] = useState(false);
+  const [hoveredPerfil, setHoveredPerfil] = useState(null);
 
   const estiloArco = (p) => ({
     width: 110,
     height: 130,
     borderRadius: "60px 60px 10px 10px",
-    backgroundColor: perfil === p ? "#145228" : "#0D3B1E",
-    border: perfil === p ? "3px solid #5FBF82" : "3px solid transparent",
+    backgroundColor: perfil === p ? "#145228" : (hoveredPerfil === p ? "#145228" : "#0D3B1E"),
+    border: perfil === p ? "3px solid #5FBF82" : (hoveredPerfil === p ? "3px solid #5FBF82" : "3px solid transparent"),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -21,6 +22,7 @@ export default function Paciente() {
     gap: 8,
     cursor: "pointer",
     transition: "all 0.2s ease",
+    transform: hoveredPerfil === p ? "scale(1.05)" : "scale(1)",
   });
 
   const handleCPF = (e) => {
@@ -109,8 +111,90 @@ export default function Paciente() {
                 marginBottom: 24,
               }}
             >
-             
-              
+              <button
+                style={{
+                  width: 80,
+                  height: 100,
+                  borderRadius: "50px 50px 8px 8px",
+                  backgroundColor: perfil === "paciente" ? "#145228" : (hoveredPerfil === "paciente" ? "#145228" : "#0D3B1E"),
+                  border: perfil === "paciente" ? "3px solid #5FBF82" : (hoveredPerfil === "paciente" ? "3px solid #5FBF82" : "3px solid transparent"),
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 8,
+                  cursor: "pointer",
+                  transition: "all 0.2s ease",
+                  transform: hoveredPerfil === "paciente" ? "scale(1.05)" : "scale(1)",
+                }}
+                onClick={() => setPerfil("paciente")}
+                onMouseEnter={() => setHoveredPerfil("paciente")}
+                onMouseLeave={() => setHoveredPerfil(null)}
+              >
+                <svg width={40} height={40} viewBox="0 0 100 100" fill="white">
+                  <circle cx="50" cy="22" r="14" />
+                  <path d="M20 85 Q20 55 50 55 Q80 55 80 85Z" />
+                  <circle cx="62" cy="62" r="13" fill="#0D3B1E" />
+                  <path
+                    d="M56 62 h12 M62 56 v12"
+                    stroke="white"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
+                </svg>
+                <span
+                  style={{
+                    color: "white",
+                    fontSize: 12,
+                    fontWeight: 600,
+                  }}
+                >
+                  paciente
+                </span>
+              </button>
+
+              <button
+                style={{
+                  width: 80,
+                  height: 100,
+                  borderRadius: "50px 50px 8px 8px",
+                  backgroundColor: perfil === "medico" ? "#145228" : (hoveredPerfil === "medico" ? "#145228" : "#0D3B1E"),
+                  border: perfil === "medico" ? "3px solid #5FBF82" : (hoveredPerfil === "medico" ? "3px solid #5FBF82" : "3px solid transparent"),
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 8,
+                  cursor: "pointer",
+                  transition: "all 0.2s ease",
+                  transform: hoveredPerfil === "medico" ? "scale(1.05)" : "scale(1)",
+                }}
+                onClick={() => setPerfil("medico")}
+                onMouseEnter={() => setHoveredPerfil("medico")}
+                onMouseLeave={() => setHoveredPerfil(null)}
+              >
+                <svg width={40} height={40} viewBox="0 0 100 100" fill="white">
+                  <circle cx="50" cy="22" r="14" />
+                  <path d="M22 100 Q22 58 50 58 Q78 58 78 100Z" />
+                  <path
+                    d="M36 67 C29 71 26 81 29 89 C32 97 40 99 41 91 C42 83 40 73 36 67Z"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="41" cy="91" r="5" />
+                </svg>
+                <span
+                  style={{
+                    color: "white",
+                    fontSize: 12,
+                    fontWeight: 600,
+                  }}
+                >
+                  médico
+                </span>
+              </button>
             </div>
 
             {/* Formulário */}

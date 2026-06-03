@@ -7,6 +7,7 @@ import Rodape from "../../Componentes/rodape";
 export default function Login() {
   const [perfilSelecionado, setPerfilSelecionado] = useState(null);
   const [mostrarSenha, setMostrarSenha] = useState(false);
+  const [hoveredPerfil, setHoveredPerfil] = useState(null);
 
   const navigate = useNavigate();
 
@@ -15,11 +16,11 @@ export default function Login() {
     height: 220,
     borderRadius: "100px 100px 16px 16px",
     backgroundColor:
-      perfilSelecionado === perfil ? "#145228" : "#0D3B1E",
+      perfilSelecionado === perfil ? "#145228" : (hoveredPerfil === perfil ? "#145228" : "#0D3B1E"),
     border:
       perfilSelecionado === perfil
         ? "4px solid #5FBF82"
-        : "4px solid transparent",
+        : (hoveredPerfil === perfil ? "4px solid #5FBF82" : "4px solid transparent"),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -27,6 +28,7 @@ export default function Login() {
     gap: 14,
     cursor: "pointer",
     transition: "all 0.2s ease",
+    transform: hoveredPerfil === perfil ? "scale(1.05)" : "scale(1)",
   });
 
   const estiloTexto = {
@@ -98,6 +100,8 @@ export default function Login() {
                 <button
                   style={estiloArco("paciente")}
                   onClick={() => setPerfilSelecionado("paciente")}
+                  onMouseEnter={() => setHoveredPerfil("paciente")}
+                  onMouseLeave={() => setHoveredPerfil(null)}
                 >
                   <svg style={estiloIcone} viewBox="0 0 100 100">
                     <circle cx="50" cy="22" r="14" />
@@ -117,6 +121,8 @@ export default function Login() {
                 <button
                   style={estiloArco("medico")}
                   onClick={() => setPerfilSelecionado("medico")}
+                  onMouseEnter={() => setHoveredPerfil("medico")}
+                  onMouseLeave={() => setHoveredPerfil(null)}
                 >
                   <svg style={estiloIcone} viewBox="0 0 100 100">
                     <circle cx="50" cy="22" r="14" />

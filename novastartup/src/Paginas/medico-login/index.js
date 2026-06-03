@@ -7,13 +7,14 @@ export default function Medico() {
   const [perfil, setPerfil] = useState(null);
   const [cpf, setCpf] = useState("");
   const [mostrarSenha, setMostrarSenha] = useState(false);
+  const [hoveredPerfil, setHoveredPerfil] = useState(null);
 
   const estiloArco = (p) => ({
     width: 110,
     height: 130,
     borderRadius: "60px 60px 10px 10px",
-    backgroundColor: perfil === p ? "#145228" : "#0D3B1E",
-    border: perfil === p ? "3px solid #5FBF82" : "3px solid transparent",
+    backgroundColor: perfil === p ? "#145228" : (hoveredPerfil === p ? "#145228" : "#0D3B1E"),
+    border: perfil === p ? "3px solid #5FBF82" : (hoveredPerfil === p ? "3px solid #5FBF82" : "3px solid transparent"),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -21,6 +22,7 @@ export default function Medico() {
     gap: 8,
     cursor: "pointer",
     transition: "all 0.2s ease",
+    transform: hoveredPerfil === p ? "scale(1.05)" : "scale(1)",
   });
 
   const handleCPF = (e) => {
@@ -114,6 +116,8 @@ export default function Medico() {
               <button
                 style={estiloArco("medico")}
                 onClick={() => setPerfil("medico")}
+                onMouseEnter={() => setHoveredPerfil("medico")}
+                onMouseLeave={() => setHoveredPerfil(null)}
               >
                 <svg
                   width={40}

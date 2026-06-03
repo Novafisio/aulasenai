@@ -1,5 +1,6 @@
 import Layout from "../../Componentes/layout";
 import Rodape from "../../Componentes/rodape";
+import fundo from "../../Componentes/imagens/fundo.png";
 
 export default function SolicitacoesAdm() {
   const SolicitacaoItem = () => (
@@ -20,17 +21,27 @@ export default function SolicitacoesAdm() {
   );
 
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: `url(${fundo})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <style>{`
         .page-wrapper {
-          background: linear-gradient(135deg, #4caf50 0%, #45a049 100%) !important;
+          background: transparent !important;
           min-height: 100vh !important;
           display: flex !important;
           flex-direction: column !important;
         }
 
         .page-wrapper main {
-          background: linear-gradient(135deg, #4caf50 0%, #45a049 100%) !important;
+          background: transparent !important;
           flex: 1 !important;
         }
 
@@ -151,39 +162,37 @@ export default function SolicitacoesAdm() {
         }
       `}</style>
 
-      <div className="page-wrapper">
-        <Layout>
-          <div className="solicitations-wrapper">
-            <div className="content-wrapper">
-              <div className="d-flex align-items-center mb-5 gap-4">
-                <h2 className="title text-white m-0">SOLICITAÇÕES</h2>
+      <Layout>
+        <div className="solicitations-wrapper">
+          <div className="content-wrapper">
+            <div className="d-flex align-items-center mb-5 gap-4">
+              <h2 className="title text-white m-0">SOLICITAÇÕES</h2>
+            </div>
+
+            <div className="row justify-content-center g-5">
+              <div className="col-12 col-md-5 border-end border-white border-3 pe-md-5">
+                <SolicitacaoItem />
+                <SolicitacaoItem />
+                <SolicitacaoItem />
+                <SolicitacaoItem />
+                <SolicitacaoItem />
+                <SolicitacaoItem />
               </div>
 
-              <div className="row justify-content-center g-5">
-                <div className="col-12 col-md-5 border-end border-white border-3 pe-md-5">
-                  <SolicitacaoItem />
-                  <SolicitacaoItem />
-                  <SolicitacaoItem />
-                  <SolicitacaoItem />
-                  <SolicitacaoItem />
-                  <SolicitacaoItem />
-                </div>
-
-                <div className="col-12 col-md-5 ps-md-5">
-                  <SolicitacaoItem />
-                  <SolicitacaoItem />
-                  <SolicitacaoItem />
-                  <SolicitacaoItem />
-                  <SolicitacaoItem />
-                  <SolicitacaoItem />
-                </div>
+              <div className="col-12 col-md-5 ps-md-5">
+                <SolicitacaoItem />
+                <SolicitacaoItem />
+                <SolicitacaoItem />
+                <SolicitacaoItem />
+                <SolicitacaoItem />
+                <SolicitacaoItem />
               </div>
             </div>
           </div>
-        </Layout>
+        </div>
+      </Layout>
 
-        <Rodape />
-      </div>
-    </>
+      <Rodape />
+    </div>
   );
 }

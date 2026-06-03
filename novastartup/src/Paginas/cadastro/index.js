@@ -7,13 +7,14 @@ export default function Cadastro() {
   const [perfil, setPerfil] = useState(null);
   const [cpf, setCpf] = useState("");
   const [mostrarSenha, setMostrarSenha] = useState(false);
+  const [hoveredPerfil, setHoveredPerfil] = useState(null);
 
   const estiloArco = (p) => ({
     width: 180,
     height: 220,
     borderRadius: "100px 100px 16px 16px",
-    backgroundColor: perfil === p ? "#145228" : "#0D3B1E",
-    border: perfil === p ? "4px solid #5FBF82" : "4px solid transparent",
+    backgroundColor: perfil === p ? "#145228" : (hoveredPerfil === p ? "#145228" : "#0D3B1E"),
+    border: perfil === p ? "4px solid #5FBF82" : (hoveredPerfil === p ? "4px solid #5FBF82" : "4px solid transparent"),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -21,6 +22,7 @@ export default function Cadastro() {
     gap: 14,
     cursor: "pointer",
     transition: "all 0.2s ease",
+    transform: hoveredPerfil === p ? "scale(1.05)" : "scale(1)",
   });
 
   const estiloTexto = {
@@ -101,6 +103,8 @@ export default function Cadastro() {
                 <button
                   style={estiloArco("paciente")}
                   onClick={() => setPerfil("paciente")}
+                  onMouseEnter={() => setHoveredPerfil("paciente")}
+                  onMouseLeave={() => setHoveredPerfil(null)}
                 >
                   <svg style={estiloIcone} viewBox="0 0 100 100">
                     <circle cx="50" cy="22" r="14" />
@@ -120,6 +124,8 @@ export default function Cadastro() {
                 <button
                   style={estiloArco("medico")}
                   onClick={() => setPerfil("medico")}
+                  onMouseEnter={() => setHoveredPerfil("medico")}
+                  onMouseLeave={() => setHoveredPerfil(null)}
                 >
                   <svg style={estiloIcone} viewBox="0 0 100 100">
                     <circle cx="50" cy="22" r="14" />
